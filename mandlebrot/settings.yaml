@@ -1,0 +1,9 @@
+# Main application settings.
+app:
+  APP_NAME:     "mandlebrot"
+  APP_VERSION:  "0.0.1"
+# Logging settings.
+log:
+  DEF_LEVEL:     20
+  MAX_SIZE:      250000
+  MAX_FILES:     3
