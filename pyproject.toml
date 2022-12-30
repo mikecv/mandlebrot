@@ -36,3 +36,4 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.scripts]
 low-res-go = "mandlebrot.low_res_app:run"
+high-res-go = "mandlebrot.high_res_app:run"
