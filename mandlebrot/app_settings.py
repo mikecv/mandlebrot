@@ -16,5 +16,5 @@ def load(settings_file: str) -> dotsi.Dict:
     """
 
     # Read the settings file and return a dictionary of settings.
-    with open(settings_file, "r") as sf:
-        return yaml.safe_load(sf)
+    with open(settings_file, "r") as set_file:
+        return yaml.safe_load(set_file)
