@@ -43,9 +43,15 @@ class LowResMandlebrot:
         log.info(f"Starting application: {self._app_name}, version: {self._app_version}")
 
         # Generate complex array of numbers (pixels in image).
-        c_pts = complex_matrix(-2, 0.5, -1.5, 1.5, pixel_density=21)
+        c_pts = complex_matrix(
+            self._settings.lres.DEF_XMIN,
+            self._settings.lres.DEF_XMAX,
+            self._settings.lres.DEF_YMIN,
+            self._settings.lres.DEF_YMAX,
+            self._settings.lres.DEF_PIXELS,
+        )
         # Determine pixels in the Mandlebrot set (not divergent).
-        members = get_members(c_pts, num_iterations=20)
+        members = get_members(c_pts, self._settings.lres.DEF_ITERATIONS)
 
         # Do simple Mandlebrot scatter plot.
         plt.scatter(members.real, members.imag, color="black", marker=",", s=1)
@@ -87,7 +93,7 @@ def get_members(c_pts: np.ndarray, num_iterations: int) -> np.ndarray:
     Retutns:
         Returns array of complex points that are stable.
     """
-    mask = is_stable(c_pts, num_iterations)
+    mask = is_stable(c_pts, num_iterations)  # type: ignore[arg-type]
     return c_pts[mask]
 
 
