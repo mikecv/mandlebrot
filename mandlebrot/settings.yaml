@@ -15,3 +15,11 @@ lres:
   DEF_XMAX:       0.5
   DEF_YMIN:       -1.5
   DEF_YMAX:       1.5
+hres:
+  DEF_ITERATIONS: 40
+  DEF_PIXELS:     512
+  DEF_XMIN:       -2
+  DEF_XMAX:       0.5
+  DEF_YMIN:       -1.5
+  DEF_YMAX:       1.5
+  COL_MAP:        "rainbow"
